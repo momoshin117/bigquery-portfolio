@@ -1,4 +1,3 @@
--- 基準日
 WITH base_date AS(
     SELECT  MAX(o.created_at) AS as_of_date
     FROM `bigquery-public-data.thelook_ecommerce.orders` o
