@@ -15,7 +15,7 @@ SELECT
   COUNT(DISTINCT o.user_id) AS purchasing_users,
   SAFE_DIVIDE(SUM(i.sale_price), COUNT(DISTINCT o.order_id)) AS average_purchase_price
 -- 売上は order_items にしかないため、INNER JOIN
--- orders にしかないものは無視
+-- order_items にないものは除外
 FROM `bigquery-public-data.thelook_ecommerce.orders` o
 JOIN `bigquery-public-data.thelook_ecommerce.order_items` i
   ON o.order_id = i.order_id
